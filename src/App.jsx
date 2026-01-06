@@ -14,7 +14,7 @@ function App() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-white font-sans selection:bg-blue-100 selection:text-blue-900 relative">
+        <div className="min-h-screen bg-white selection:bg-blue-100 selection:text-blue-900 relative">
             <Home isLoading={isLoading} />
             <Navbar showLogo={!isLoading} />
 
