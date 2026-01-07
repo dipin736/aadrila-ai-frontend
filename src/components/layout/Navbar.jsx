@@ -17,10 +17,10 @@ const Navbar = ({ showLogo = true }) => {
     const navItems = ['Home', 'Industries', 'Products', 'Blog', 'Contact Us', 'About Us'];
     return (
         <nav
-            className={`sticky  top-0 w-full z-50 transition-all duration-300
-            ${scrolled ? "bg-white/5 backdrop-blur-md shadow-sm" : 'bg-transparent py-6'}`}
+            className={`fixed top-0 w-full z-50 transition-all duration-300
+            ${scrolled ? "bg-white/5 backdrop-blur-md shadow-sm py-2" : 'bg-transparent py-6'}`}
              style={{
-                backdropFilter: scrolled ? "blur(10px)" : "none",
+                backdropFilter: scrolled ? "blur(8px)" : "none",
             }}
         >
             <div className="max-w-7xl mx-auto px-6 flex items-center relative">
@@ -41,7 +41,7 @@ const Navbar = ({ showLogo = true }) => {
                         <a
                             key={item}
                             href="#"
-                            className="text-gray-700 hover:text-[#3E6EB4]-600 font-medium transition"
+                            className="text-gray-700 hover:text-[#3E6EB4] font-medium transition"
                         >
                             {item}
                         </a>
@@ -49,7 +49,7 @@ const Navbar = ({ showLogo = true }) => {
                 </div>
 
                 <div className="ml-auto hidden md:block">
-                    <Button className="px-8 py-3 rounded-full bg-[#3E6EB4] text-white hover:bg-[#355fa0] shadow-lg shadow-blue-500/30">
+                    <Button className="px-8 py-3 rounded-full bg-[#3E6EB4] text-white hover:bg-[#355fa0] shadow-blue-500/30">
                         Get a Demo
                     </Button>
                 </div>
