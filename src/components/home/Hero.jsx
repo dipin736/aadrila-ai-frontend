@@ -15,7 +15,7 @@ const heroDocs = [
 
 const Hero = () => {
     return (
-        <section className="relative min-h-screen pt-5 overflow-hidden">
+        <section id="home" className="relative min-h-screen pt-5 overflow-hidden">
             <div className="absolute inset-0 pointer-events-none">
                 <img src={heroBg} className="w-full h-full object-cover" alt="" />
             </div>

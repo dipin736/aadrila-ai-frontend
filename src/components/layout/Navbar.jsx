@@ -7,23 +7,48 @@ import { Menu, X } from 'lucide-react';
 const Navbar = ({ showLogo = true }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [activeSection, setActiveSection] = useState('#home');
 
+    const navItems = [
+        { name: 'Home', href: '#home' },
+        { name: 'Industries', href: '#industries' },
+        { name: 'Products', href: '#products' },
+        { name: 'Blog', href: '#blog' },
+        { name: 'Contact Us', href: '#contact' },
+        { name: 'About Us', href: '#about' }
+    ];
+
+    // Handle scroll for navbar background & active section
     useEffect(() => {
-        const handleScroll = () => setScrolled(window.scrollY > 20);
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+
+            navItems.forEach(item => {
+                const section = document.querySelector(item.href);
+                if (section) {
+                    const top = section.offsetTop - 120; // adjust for navbar height
+                    const bottom = top + section.offsetHeight;
+                    if (window.scrollY >= top && window.scrollY < bottom) {
+                        setActiveSection(item.href);
+                    }
+                }
+            });
+        };
+
         window.addEventListener('scroll', handleScroll);
+        handleScroll(); // run on mount
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const navItems = ['Home', 'Industries', 'Products', 'Blog', 'Contact Us', 'About Us'];
     return (
         <nav
-            className={`fixed top-0 w-full z-50 transition-all duration-300
-            ${scrolled ? "bg-white/5 backdrop-blur-md shadow-sm py-2" : 'bg-transparent py-6'}`}
-             style={{
-                backdropFilter: scrolled ? "blur(8px)" : "none",
-            }}
+            className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+                scrolled ? 'bg-white/5 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-6'
+            }`}
+            style={{ backdropFilter: scrolled ? 'blur(8px)' : 'none' }}
         >
             <div className="max-w-7xl mx-auto px-6 flex items-center relative">
+                {/* Logo */}
                 <div className="flex items-center">
                     {showLogo && (
                         <motion.img
@@ -36,24 +61,31 @@ const Navbar = ({ showLogo = true }) => {
                     )}
                 </div>
 
+                {/* Desktop Nav */}
                 <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
                     {navItems.map(item => (
                         <a
-                            key={item}
-                            href="#"
-                            className="text-gray-700 hover:text-[#3E6EB4] font-medium transition"
+                            key={item.name}
+                            href={item.href}
+                            className={`font-medium transition ${
+                                activeSection === item.href
+                                    ? 'text-[#3E6EB4]' // Active link color
+                                    : 'text-gray-700 hover:text-[#3E6EB4]'
+                            }`}
                         >
-                            {item}
+                            {item.name}
                         </a>
                     ))}
                 </div>
 
+                {/* Get a Demo Button */}
                 <div className="ml-auto hidden md:block">
                     <Button className="px-8 py-3 rounded-full bg-[#3E6EB4] text-white hover:bg-[#355fa0] shadow-blue-500/30">
                         Get a Demo
                     </Button>
                 </div>
 
+                {/* Mobile Hamburger */}
                 <button
                     className="md:hidden ml-auto text-gray-700"
                     onClick={() => setIsOpen(prev => !prev)}
@@ -63,6 +95,7 @@ const Navbar = ({ showLogo = true }) => {
                 </button>
             </div>
 
+            {/* Mobile Nav */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -75,12 +108,14 @@ const Navbar = ({ showLogo = true }) => {
                         <div className="px-6 py-4 flex flex-col gap-4">
                             {navItems.map(item => (
                                 <a
-                                    key={item}
-                                    href="#"
-                                    className="text-gray-700 font-medium"
+                                    key={item.name}
+                                    href={item.href}
+                                    className={`font-medium ${
+                                        activeSection === item.href ? 'text-[#3E6EB4]' : 'text-gray-700'
+                                    }`}
                                     onClick={() => setIsOpen(false)}
                                 >
-                                    {item}
+                                    {item.name}
                                 </a>
                             ))}
 

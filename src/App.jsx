@@ -21,6 +21,7 @@ function App() {
 
             <main>
                 <Hero />
+                
             </main>
         </div>
     );
