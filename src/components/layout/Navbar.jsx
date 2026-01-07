@@ -26,7 +26,7 @@ const Navbar = ({ showLogo = true }) => {
             navItems.forEach(item => {
                 const section = document.querySelector(item.href);
                 if (section) {
-                    const top = section.offsetTop - 120; // adjust for navbar height
+                    const top = section.offsetTop - 120; 
                     const bottom = top + section.offsetHeight;
                     if (window.scrollY >= top && window.scrollY < bottom) {
                         setActiveSection(item.href);
@@ -36,7 +36,7 @@ const Navbar = ({ showLogo = true }) => {
         };
 
         window.addEventListener('scroll', handleScroll);
-        handleScroll(); // run on mount
+        handleScroll(); 
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -48,7 +48,6 @@ const Navbar = ({ showLogo = true }) => {
             style={{ backdropFilter: scrolled ? 'blur(8px)' : 'none' }}
         >
             <div className="max-w-7xl mx-auto px-6 flex items-center relative">
-                {/* Logo */}
                 <div className="flex items-center">
                     {showLogo && (
                         <motion.img
@@ -61,7 +60,6 @@ const Navbar = ({ showLogo = true }) => {
                     )}
                 </div>
 
-                {/* Desktop Nav */}
                 <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
                     {navItems.map(item => (
                         <a
@@ -69,7 +67,7 @@ const Navbar = ({ showLogo = true }) => {
                             href={item.href}
                             className={`font-medium transition ${
                                 activeSection === item.href
-                                    ? 'text-[#3E6EB4]' // Active link color
+                                    ? 'text-[#3E6EB4]' 
                                     : 'text-gray-700 hover:text-[#3E6EB4]'
                             }`}
                         >
@@ -78,7 +76,6 @@ const Navbar = ({ showLogo = true }) => {
                     ))}
                 </div>
 
-                {/* Get a Demo Button */}
                 <div className="ml-auto hidden md:block">
                     <Button className="px-8 py-3 rounded-full bg-[#3E6EB4] text-white hover:bg-[#355fa0] shadow-blue-500/30">
                         Get a Demo

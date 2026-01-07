@@ -15,7 +15,7 @@ const heroDocs = [
 
 const Hero = () => {
     return (
-        <section id="home" className="relative min-h-screen pt-5 overflow-hidden">
+        <section id="home" className="relative min-h-screen pt-22 overflow-hidden">
             <div className="absolute inset-0 pointer-events-none">
                 <img src={heroBg} className="w-full h-full object-cover" alt="" />
             </div>
@@ -52,7 +52,7 @@ const Hero = () => {
                 </div>
 
                 {/* RIGHT 3D CAROUSEL */}
-                <div className="w-full flex justify-center items-center py-20 bg-gray-50">
+                <div className="w-full flex justify-center items-center py-20">
                     <DocCarousel documents={heroDocs} interval={4000} />
                 </div>
             </div>
