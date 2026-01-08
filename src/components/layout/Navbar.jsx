@@ -43,11 +43,11 @@ const Navbar = ({ showLogo = true }) => {
     return (
         <nav
             className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-                scrolled ? 'bg-white/5 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-6'
+                scrolled ? 'bg-white/45 backdrop-blur-md shadow-sm py-2' : 'bg-transparent py-6'
             }`}
             style={{ backdropFilter: scrolled ? 'blur(8px)' : 'none' }}
         >
-            <div className="max-w-7xl mx-auto px-6 flex items-center relative">
+            <div className="max-w-[1380px] mx-auto px-6 flex items-center relative">
                 <div className="flex items-center">
                     {showLogo && (
                         <motion.img

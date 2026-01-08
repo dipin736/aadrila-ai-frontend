@@ -14,7 +14,7 @@ const IndustryCard = ({ item, index }) => {
                 bg-white
                 rounded-[20px]
                 shadow-[0_0_20px_rgba(0,0,0,0.12)]
-                relative
+                md:relative
             "
             style={{ top: (1 - index) * 150 }}
         >

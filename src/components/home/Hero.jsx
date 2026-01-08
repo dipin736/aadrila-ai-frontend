@@ -20,9 +20,9 @@ const Hero = () => {
                 <img src={heroBg} className="w-full h-full object-cover" alt="" />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="relative z-10 max-w-[1380px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="text-white">
-                    <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                    <h1 className="font-raleway text-4xl md:text-6xl font-bold leading-tight">
                         <span className="gradient-text-ai">AI-Powered</span>
                         <br />
                         <span className="text-gray-900 font-semibold  text-[48px]">

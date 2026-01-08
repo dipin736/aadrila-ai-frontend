@@ -3,6 +3,7 @@ import Navbar from './components/layout/Navbar';
 import Home from './pages/Home';
 import Hero from './components/home/Hero.JSX';
 import Industries from './pages/Industries.JSX';
+import Products from './pages/Products';
 
 function App() {
     const [isLoading, setIsLoading] = useState(true);
@@ -22,7 +23,8 @@ function App() {
 
             <main>
                 <Hero />
-                <Industries/>
+                <Industries />
+                <Products />
             </main>
         </div>
     );

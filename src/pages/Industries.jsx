@@ -16,17 +16,17 @@ const Industries = () => {
             <img
                 src={dotsLeft1}
                 alt=""
-                className="absolute right-1 bottom-5 w-40 opacity-140 
+                className="absolute right-1 bottom-5 w-50 opacity-140 
                 pointer-events-none hidden lg:block"
             />
 
-            <div className="relative z-10 max-w-7xl mx-auto px-0 py-5">
+            <div className="relative z-10 max-w-[1380px] mx-auto px-6 py-5">
                 {/* Header */}
                 <div className="mb-10">
                     <h2 className="text-4xl md:text-6xl font-bold">
                         <span className="innovation-text-ai text-[24px]">AI-driven innovation for growth</span>
                         <br />
-                        <span className="text-gray-900 font-semibold text-[48px]">Industries We Empower</span>
+                        <span className="font-raleway text-gray-900 font-semibold text-[48px]">Industries We Empower</span>
                     </h2>
                 </div>
 
