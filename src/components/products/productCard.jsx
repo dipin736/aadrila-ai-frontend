@@ -54,7 +54,7 @@ export const ProductCard = ({ product }) => {
                 <img
                     src={dotsLeft1}
                     alt=""
-                    className="absolute right-30 bottom-265 w-30 opacity-120 
+                    className="absolute right-30 bottom-270 w-30 opacity-120 
                 pointer-events-none hidden lg:block"
                 />
                 <div className="space-y-6 mb-8">
