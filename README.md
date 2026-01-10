@@ -20,7 +20,7 @@ Built using **React** and **Tailwind CSS**, it features a fully responsive layou
 -   **Frontend:** React
 -   **Styling:** Tailwind CSS
 -   **Animations:** Framer Motion
--   **Deployment:** Netlify
+-   **Deployment:** Vercel
 
 ## ⚡ Setup & Run
 
