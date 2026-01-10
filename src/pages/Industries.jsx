@@ -5,7 +5,7 @@ import { industries } from '../components/Industries/IndustriesData';
 
 const Industries = () => {
     return (
-        <section id="industries" className="relative min-h-screen py-12 bg-white overflow-hidden">
+        <section id="industries" className="relative min-h-screen py-42 pt-55  bg-white overflow-hidden">
             <img
                 src={circleBg}
                 alt=""
@@ -16,8 +16,7 @@ const Industries = () => {
             <img
                 src={dotsLeft1}
                 alt=""
-                className="absolute right-1 bottom-5 w-50 opacity-140 
-                pointer-events-none hidden lg:block"
+              className="absolute -left-30 top-10 w-30 opacity-140 pointer-events-none"
             />
 
             <div className="relative z-10 max-w-[1380px] mx-auto px-6 py-5">
