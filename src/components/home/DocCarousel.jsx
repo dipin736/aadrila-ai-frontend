@@ -108,7 +108,7 @@ const DocCarousel = ({ documents = [], interval = 4000, containerClass = '' }) =
             className={`flex-1 w-full h-[500px] lg:h-[600px] relative flex items-center justify-center ${containerClass}`}
             style={{ perspective: 1000 }}
         >
-            {/* Render all document cards */}
+
             {documents.map((doc, index) => {
                 const position = getPosition(index);
 
@@ -130,16 +130,15 @@ const DocCarousel = ({ documents = [], interval = 4000, containerClass = '' }) =
                 );
             })}
 
-            {/* Scanner overlay outside map */}
             <div
                 className="absolute pointer-events-none"
                 style={{
-                    width: '283.67px', // same as card width
-                    height: '374.9px', // same as card height
-                    left: '50%', // center horizontally
-                    top: '50%', // center vertically
-                    transform: 'translate(-50%, -50%)', // center exactly
-                    zIndex: 50 // above cards
+                    width: '283.67px', 
+                    height: '374.9px', 
+                    left: '50%', 
+                    top: '50%', 
+                    transform: 'translate(-50%, -50%)', 
+                    zIndex: 50 
                 }}
             >
                 <QRScanOverlay />
